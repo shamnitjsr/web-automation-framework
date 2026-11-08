@@ -1,0 +1,66 @@
+# Indexed Job = N identical pods, each told its own index (0..N-1) -> each runs 1/N of the suite.
+# Rendered by scripts/k8s-run.sh with envsubst: IMAGE, RUN_ID, SHARDS, TEST_GROUPS
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: web-automation-${RUN_ID}
+  namespace: qa-automation
+  labels:
+    app: web-automation
+spec:
+  completionMode: Indexed
+  completions: ${SHARDS}
+  parallelism: ${SHARDS}
+  backoffLimit: 0
+  activeDeadlineSeconds: 3600
+  ttlSecondsAfterFinished: 86400
+  template:
+    metadata:
+      labels:
+        app: web-automation
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: tests
+          image: ${IMAGE}
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: web-automation-config
+            - secretRef:
+                name: web-automation-secrets
+          env:
+            - name: RUN_ID
+              value: "${RUN_ID}"
+            - name: SHARD_TOTAL
+              value: "${SHARDS}"
+            - name: SHARD_INDEX
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.annotations['batch.kubernetes.io/job-completion-index']
+            - name: TEST_GROUPS
+              value: "${TEST_GROUPS}"
+            - name: RESULTS_DIR
+              value: /results
+            - name: K8S_MODE
+              value: "true"
+          resources:
+            requests:
+              cpu: "2"
+              memory: 3Gi
+            limits:
+              cpu: "2"
+              memory: 4Gi
+          volumeMounts:
+            - name: shm
+              mountPath: /dev/shm
+            - name: results
+              mountPath: /results
+      volumes:
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 1Gi
+        - name: results
+          persistentVolumeClaim:
+            claimName: web-automation-results

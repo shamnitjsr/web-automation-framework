@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  parallel="classes": every test class runs on its own thread, including its @BeforeClass/@AfterClass.
+  Playwright for Java is NOT thread-safe, so one Playwright + Browser per class (see BaseTest) is the safe model.
+  Keep tests inside a class independent; keep classes small and feature-focused so they spread evenly.
+-->
+<suite name="Web Automation" parallel="classes" thread-count="4">
+  <listeners>
+    <listener class-name="com.company.automation.listeners.RetryListener"/>
+    <listener class-name="com.company.automation.listeners.ShardInterceptor"/>
+  </listeners>
+  <test name="OpenCart Storefront">
+    <packages>
+      <package name="com.company.automation.tests.*"/>
+    </packages>
+  </test>
+</suite>

@@ -1,0 +1,12 @@
+# Shared storage for shard results. Needs a ReadWriteMany storage class (Azure Files, NFS, EFS, ...).
+# Alternative: have run-tests.sh upload to Azure Blob / S3 instead and drop this PVC.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: web-automation-results
+  namespace: qa-automation
+spec:
+  accessModes: ["ReadWriteMany"]
+  resources:
+    requests:
+      storage: 5Gi

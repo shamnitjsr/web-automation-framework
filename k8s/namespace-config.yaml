@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: qa-automation
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-automation-config
+  namespace: qa-automation
+data:
+  TEST_ENV: "qa"
+  BASE_URL: "http://opencart.qa.svc.cluster.local:8080"   # change to your application under test
+  BROWSER: "chromium"
+  HEADLESS: "true"
+---
+# Template only. Create the real secret from your CI secret store, never commit values:
+#   kubectl -n qa-automation create secret generic web-automation-secrets \
+#     --from-literal=USER_EMAIL=... --from-literal=USER_PASSWORD=... \
+#     --from-literal=USER_NEGATIVE_EMAIL=... --from-literal=USER_NEGATIVE_PASSWORD=...
+# (kept here as documentation; do not apply this file with real values inside)

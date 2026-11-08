@@ -1,0 +1,52 @@
+# Local test environment: OpenCart + DB + mail catcher, and the test runner.
+#   docker compose up -d opencart            # start the app under test
+#   docker compose --profile test run --rm tests
+# NOTE: Bitnami moved its public images in 2025. If `bitnami/opencart` fails to pull, switch the
+# image names below to a maintained OpenCart image or your company's internal one.
+services:
+  mariadb:
+    image: bitnami/mariadb:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_opencart
+      - MARIADB_DATABASE=bitnami_opencart
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+
+  opencart:
+    image: bitnami/opencart:latest
+    depends_on: [mariadb]
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENCART_HOST=opencart:8080
+      - OPENCART_DATABASE_HOST=mariadb
+      - OPENCART_DATABASE_PORT_NUMBER=3306
+      - OPENCART_DATABASE_USER=bn_opencart
+      - OPENCART_DATABASE_NAME=bitnami_opencart
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - opencart_data:/bitnami/opencart
+
+  mailhog:               # catches registration / reset-password emails (UI: http://localhost:8025)
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+
+  tests:
+    profiles: ["test"]
+    build: .
+    depends_on: [opencart]
+    ipc: host            # Chromium needs a large /dev/shm
+    env_file: .env
+    environment:
+      - BASE_URL=http://opencart:8080
+      - TEST_GROUPS=smoke
+      - RESULTS_DIR=/results
+      - RUN_ID=compose
+    volumes:
+      - ./results:/results
+
+volumes:
+  mariadb_data:
+  opencart_data:

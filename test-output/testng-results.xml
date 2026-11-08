@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-11-08T16:47:26 IST" name="Default suite" finished-at="2026-11-08T16:48:01 IST" duration-ms="34286">
+    <groups>
+      <group name="regression">
+        <method signature="LoginTest.browserBackAfterLoginKeepsSession()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="browserBackAfterLoginKeepsSession" class="com.company.automation.tests.LoginTest"/>
+        <method signature="LoginTest.browserBackAfterLogoutDoesNotRestoreSession()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="browserBackAfterLogoutDoesNotRestoreSession" class="com.company.automation.tests.LoginTest"/>
+        <method signature="LoginTest.fieldsHavePlaceholders()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="fieldsHavePlaceholders" class="com.company.automation.tests.LoginTest"/>
+        <method signature="LoginTest.forgottenPasswordLinkWorks()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="forgottenPasswordLinkWorks" class="com.company.automation.tests.LoginTest"/>
+        <method signature="LoginTest.invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="invalidCredentialsShowWarning" class="com.company.automation.tests.LoginTest"/>
+        <method signature="LoginTest.passwordFieldIsMasked()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="passwordFieldIsMasked" class="com.company.automation.tests.LoginTest"/>
+        <method signature="LoginTest.validCredentialsLogIn()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="validCredentialsLogIn" class="com.company.automation.tests.LoginTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="LoginTest.validCredentialsLogIn()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" name="validCredentialsLogIn" class="com.company.automation.tests.LoginTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2026-11-08T16:47:26 IST" name="Default test" finished-at="2026-11-08T16:48:01 IST" duration-ms="34286">
+      <class name="com.company.automation.tests.LoginTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:26 IST" name="launchBrowser" finished-at="2026-11-08T16:47:32 IST" duration-ms="5635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:32 IST" name="openContext" finished-at="2026-11-08T16:47:33 IST" duration-ms="1196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:33 IST" name="openLoginPage" finished-at="2026-11-08T16:47:34 IST" duration-ms="532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="browserBackAfterLoginKeepsSession()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:34 IST" name="browserBackAfterLoginKeepsSession" description="Back button after login keeps the user logged in" finished-at="2026-11-08T16:47:36 IST" duration-ms="2051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserBackAfterLoginKeepsSession -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:36 IST" name="closeContext" finished-at="2026-11-08T16:47:36 IST" duration-ms="76" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=browserBackAfterLoginKeepsSession status=SUCCESS method=LoginTest.browserBackAfterLoginKeepsSession()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:36 IST" name="openContext" finished-at="2026-11-08T16:47:37 IST" duration-ms="972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:37 IST" name="openLoginPage" finished-at="2026-11-08T16:47:38 IST" duration-ms="353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="browserBackAfterLogoutDoesNotRestoreSession()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:38 IST" name="browserBackAfterLogoutDoesNotRestoreSession" description="Back button after logout does not log the user in again" finished-at="2026-11-08T16:47:39 IST" duration-ms="1684" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[ER-1: user must not be logged in again expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: ER-1: user must not be logged in again expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertFalse(Assert.java:79)
+at com.company.automation.tests.LoginTest.browserBackAfterLogoutDoesNotRestoreSession(LoginTest.java:102)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserBackAfterLogoutDoesNotRestoreSession -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:39 IST" name="closeContext" finished-at="2026-11-08T16:47:40 IST" duration-ms="753" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=browserBackAfterLogoutDoesNotRestoreSession status=FAILURE method=LoginTest.browserBackAfterLogoutDoesNotRestoreSession()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:40 IST" name="openContext" finished-at="2026-11-08T16:47:41 IST" duration-ms="931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:41 IST" name="openLoginPage" finished-at="2026-11-08T16:47:41 IST" duration-ms="357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="fieldsHavePlaceholders()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:41 IST" name="fieldsHavePlaceholders" description="Placeholders on email and password fields" finished-at="2026-11-08T16:47:41 IST" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fieldsHavePlaceholders -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:41 IST" name="closeContext" finished-at="2026-11-08T16:47:41 IST" duration-ms="59" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fieldsHavePlaceholders status=SUCCESS method=LoginTest.fieldsHavePlaceholders()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:41 IST" name="openContext" finished-at="2026-11-08T16:47:42 IST" duration-ms="849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:42 IST" name="openLoginPage" finished-at="2026-11-08T16:47:43 IST" duration-ms="346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="forgottenPasswordLinkWorks()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:43 IST" name="forgottenPasswordLinkWorks" description="Forgotten Password link is present and works" finished-at="2026-11-08T16:47:43 IST" duration-ms="314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgottenPasswordLinkWorks -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:43 IST" name="closeContext" finished-at="2026-11-08T16:47:43 IST" duration-ms="75" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=forgottenPasswordLinkWorks status=SUCCESS method=LoginTest.forgottenPasswordLinkWorks()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:43 IST" name="openContext" finished-at="2026-11-08T16:47:44 IST" duration-ms="932" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:44 IST" name="openLoginPage" finished-at="2026-11-08T16:47:44 IST" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:44 IST" name="invalidCredentialsShowWarning" description="Invalid / missing credentials show the warning" data-provider="invalidCredentials" finished-at="2026-11-08T16:47:45 IST" duration-ms="1135" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_LF_002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[xyzabc123@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[xyzabc123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCredentialsShowWarning -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:45 IST" name="closeContext" finished-at="2026-11-08T16:47:45 IST" duration-ms="79" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidCredentialsShowWarning status=SUCCESS method=LoginTest.invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:45 IST" name="openContext" finished-at="2026-11-08T16:47:47 IST" duration-ms="1539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:47 IST" name="openLoginPage" finished-at="2026-11-08T16:47:47 IST" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:47 IST" name="invalidCredentialsShowWarning" description="Invalid / missing credentials show the warning" data-provider="invalidCredentials" finished-at="2026-11-08T16:47:49 IST" duration-ms="1464" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_LF_003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[xyzabc123@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NewYorkLife@12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCredentialsShowWarning -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:49 IST" name="closeContext" finished-at="2026-11-08T16:47:49 IST" duration-ms="99" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidCredentialsShowWarning status=SUCCESS method=LoginTest.invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:49 IST" name="openContext" finished-at="2026-11-08T16:47:51 IST" duration-ms="2281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:51 IST" name="openLoginPage" finished-at="2026-11-08T16:47:52 IST" duration-ms="376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:52 IST" name="invalidCredentialsShowWarning" description="Invalid / missing credentials show the warning" data-provider="invalidCredentials" finished-at="2026-11-08T16:47:53 IST" duration-ms="1386" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_LF_004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["pavanol123@abc.com"]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[xyzabc123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCredentialsShowWarning -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:53 IST" name="closeContext" finished-at="2026-11-08T16:47:53 IST" duration-ms="71" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidCredentialsShowWarning status=SUCCESS method=LoginTest.invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:53 IST" name="openContext" finished-at="2026-11-08T16:47:54 IST" duration-ms="1071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:54 IST" name="openLoginPage" finished-at="2026-11-08T16:47:55 IST" duration-ms="475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:55 IST" name="invalidCredentialsShowWarning" description="Invalid / missing credentials show the warning" data-provider="invalidCredentials" finished-at="2026-11-08T16:47:56 IST" duration-ms="1352" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_LF_005]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCredentialsShowWarning -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:56 IST" name="closeContext" finished-at="2026-11-08T16:47:56 IST" duration-ms="70" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidCredentialsShowWarning status=SUCCESS method=LoginTest.invalidCredentialsShowWarning(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:56 IST" name="openContext" finished-at="2026-11-08T16:47:57 IST" duration-ms="1009" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:57 IST" name="openLoginPage" finished-at="2026-11-08T16:47:58 IST" duration-ms="359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="passwordFieldIsMasked()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:58 IST" name="passwordFieldIsMasked" description="Password text is masked" finished-at="2026-11-08T16:47:58 IST" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordFieldIsMasked -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:58 IST" name="closeContext" finished-at="2026-11-08T16:47:58 IST" duration-ms="60" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=passwordFieldIsMasked status=SUCCESS method=LoginTest.passwordFieldIsMasked()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="openContext()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:58 IST" name="openContext" finished-at="2026-11-08T16:47:59 IST" duration-ms="902" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openContext -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:59 IST" name="openLoginPage" finished-at="2026-11-08T16:47:59 IST" duration-ms="343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="validCredentialsLogIn()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:47:59 IST" name="validCredentialsLogIn" description="Valid credentials" finished-at="2026-11-08T16:48:00 IST" duration-ms="1243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validCredentialsLogIn -->
+        <test-method is-config="true" signature="closeContext(org.testng.ITestResult)[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:48:00 IST" name="closeContext" finished-at="2026-11-08T16:48:00 IST" duration-ms="80" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validCredentialsLogIn status=SUCCESS method=LoginTest.validCredentialsLogIn()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.company.automation.tests.LoginTest@6127a7e]" started-at="2026-11-08T16:48:00 IST" name="closeBrowser" finished-at="2026-11-08T16:48:01 IST" duration-ms="510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.company.automation.tests.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
