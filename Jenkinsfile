@@ -16,7 +16,7 @@ pipeline {
     string(name: 'BASE_URL_OVERRIDE', defaultValue: '', description: 'Optional. Leave empty to use the URL from the env file')
     choice(name: 'BROWSER', choices: ['chromium', 'firefox', 'webkit'])
     booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Must stay true on a Jenkins service (no desktop)')
-    string(name: 'TEST_GROUPS', defaultValue: 'smoke', description: 'smoke | regression | empty for all')
+    string(name: 'TEST_GROUPS', defaultValue: ['smoke','regression'], description: 'smoke | regression | empty for all')
   }
 
   stages {
